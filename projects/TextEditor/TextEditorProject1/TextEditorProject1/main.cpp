@@ -25,11 +25,9 @@ int main(void)
 	main_window = initscr();
 
 	//resize our window
-
 	//resize_term(5000, 5000);
 	getmaxyx(main_window, num_rows, num_cols);
-	resize_term(num_rows - 1, num_cols - 1);
-	//getmaxyx(main_window, num_rows, num_cols);
+	//resize_term(num_rows - 1, num_cols - 1);
 
 	//turn keyboard echo
 	noecho();
@@ -39,23 +37,38 @@ int main(void)
 	//hide cursor
 	curs_set(FALSE);
 
-	//main program logic goes here
+	//set text & window color
+	init_pair(COLOR_GREEN, COLOR_GREEN, COLOR_GREEN);
+	color_set(COLOR_GREEN, main_window);
+	//wcolor_set(main_window, COLOR_GREEN, main_window);
+
+	//MAIN PROGRAM LOGIC GOES HERE
+
+	//ROWS MANIPULATION
 	for (int i = 0; i < num_cols; i++)
 	{
 		//top row
-		mvaddch(0, i, ACS_BOARD);
-		//bottowm row
-		mvaddch(num_rows - 1, i, ACS_BOARD);
+		mvaddch(0, i, ACS_BLOCK);
+		//bottom row
+		mvaddch(num_rows - 1, i, ACS_BLOCK);
 	}
 
+	// text editor name, version, and file name
+	attron(A_REVERSE);
+	mvprintw(0, 5, "GNU micro 1");
+	mvprintw(0, 50, "File: ");
+	attroff(A_REVERSE);
+	//printw("this is some text");
+
+	//COLUMNS MANIPULATION
 	for (int i = 0; i < num_rows; i++)
 	{
 		//left column
-		mvaddch(i, 0, ACS_BOARD);
+		mvaddch(i, 0, ACS_BLOCK);
 		//right column
-		mvaddch(i, num_cols - 1, ACS_BOARD);
-
+		mvaddch(i, num_cols - 1, ACS_BLOCK);
 	}
+
 	//pause for input
 	char input = getch();
 
