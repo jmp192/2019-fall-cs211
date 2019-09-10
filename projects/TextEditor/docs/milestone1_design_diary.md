@@ -1,2 +1,9 @@
 # Design Diary
 Use this space to talk about your process.  For inspiration, see [my prompts](../../../docs/sample_reflection.md) 
+1) One oustanding issue I came across was how to get my text to not overwrite the border I had created. I overcame this by watching some tutorials online on how to keep the text within the foreground.
+2) I was unable to get to change the color of my border and text produced. With additional time I may be able to resolve this. I also need to dedicate more time to having the menu adjust as a user scrolls in any given direction.
+3) I recommend taking the time to read through the user guides on what pdcurses is and how the different functions, variables, etc. relate. Also, definitely checkout some tutorials online on how to draw and utilize pdcurses.
+5) I really enjoyed the opportunity to just play around and experiment with the different functions, and see what I could pull off.
+6) As we're just getting exposed to the project, it took a bit of extra time in the early stages to setup the project and get familiar with pdcurses and how to draw with it.
+7) I set a bit of time aside to get a better understanding of github, git files, and what version control is and how it is used. PDcurses is still confusing to me in certain aspects. Understanding how windows are used inside PDcurses, and being able to switch between multiple windows and pdcurses mode vs just interacting directly with the Virtual Studios console. 
+8) My next focus at the moment is to get the border and menu to move with the user as they scroll in any direction. I also wish to improve the location of the menu, and add color to my GUI. This project also exposed me to the functionality of Visual Studios and the range of its potential uses, as before this project I had no exposure to Visual Studios.
