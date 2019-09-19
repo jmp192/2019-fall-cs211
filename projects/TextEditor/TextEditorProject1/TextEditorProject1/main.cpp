@@ -106,7 +106,7 @@ int main(void)
 	INPUT CODE HERE
 	*/
 
-	//creating a NEW WINDOW for INPUT
+	//creating a NEW WINDOW for input
 	//WINDOW* inputwin = newwin(3, 12, 5, 5);
 	//box(inputwin, 0, 0);
 	//refresh();
