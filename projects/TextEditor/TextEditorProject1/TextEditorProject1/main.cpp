@@ -93,7 +93,7 @@ int main(void)
 	}
 
 	/*
-	GUI FILE TEXT HERE
+	GUI FILE TEXT here
 	*/
 
 	attron(COLOR_PAIR(2));
