@@ -17,29 +17,23 @@ int main(void)
 	int num_cols = 0;
 	int num_rows = 0;
 
-	/*
-	SETUP
-	*/
-	
-	//START NEW TEXT FILE
-	ifstream fin;
-	fin.open("myFile.txt");
-
-	//USE FILE CODE HERE
-
-	fin.close();
-
 	//initialize window
 	main_window = initscr();
 
+	/*
+	SETUP
+	*/
+
+
 	//resize our window
-	//resize_term(5000, 5000); //work on the resize here
+	//resize_term(5000, 5000);				   //work on the resize here
 	getmaxyx(main_window, num_rows, num_cols);
-	//resize_term(num_rows - 1, num_cols - 1);//work on resize here
+	//resize_term(num_rows - 1, num_cols - 1); //work on resize here
 
 	//turn keyboard echo
 	noecho();
 
+	//turn keypad on
 	keypad(main_window, TRUE);
 
 	//hide cursor
@@ -61,13 +55,13 @@ int main(void)
 	for (int i = 0; i < num_cols; i++)
 	{
 		//top row
-		
 		start_color();
 		init_pair(1, COLOR_YELLOW, COLOR_YELLOW);
 		
 		attron(COLOR_PAIR(1));
 		mvaddch(0, i, ACS_BLOCK);
 		attroff(COLOR_PAIR(1));
+
 		//bottom row
 		mvaddch(num_rows - 1, i, ACS_BLOCK);
 	}
@@ -130,7 +124,21 @@ int main(void)
 			break;
 		};
 
-	getch();
+		//for (int i = 0; i < num_cols; i++)
+		//{
+			//mvwprintw(main_window, 1, 1, "<Enter exit to exit>");
+
+			//getch();
+
+			//if (inChar == 'a' && inChar != 'e')
+			//{
+				//mvaddch( i + 2, 2, 'a');
+
+				//getch();
+			//}
+		//}
+
+	//getch();
 
 	//INPUT CODE HERE
 	//get user input
@@ -142,6 +150,35 @@ int main(void)
 	//mvprintw(2, 2, userStr);
 
 	//int input = getch();
+
+
+	//START NEW TEXT FILE
+	//ifstream fin;
+	//fin.open("myFile.txt");
+
+	//wifstream fin;
+	ifstream fin;
+	fin.open("C:\Users\James Pelligra\2019-fall-cs211\projects\TextEditor\TextEditorProject1");
+
+	char   first[80];
+	fin >> first;
+	mvprintw(4, 4, first);
+	wrefresh(main_window);
+
+
+	//try a nested statement to USE FILE
+
+	fin.close();
+
+	//OUTPUT FILE
+	//wofstream fout;
+	//ofstream fout;
+	//fout.open("myOutFile.txt");
+
+	//use output file
+
+	//fout.close();
+
 
 	/*
 	END CURSES MODE
