@@ -1,2 +1,11 @@
 # Design Diary
 Use this space to talk about your process.  For inspiration, see [my prompts](../../../docs/sample_reflection.md) 
+
+1) The greatest struggle I was able to overcome this milestone was allowing a user to be able to interact with the console by entering
+any single character. I was able to include the right combination of commands that would allow the user to enter a character, which could then be used to output anything I dictated in my code to the screen. For example, if the user was to enter any of the arrows, such as the up arrow, I could output that the user hit the up arrow key to the screen. Alternatively, I designed it so that by hitting any of the arrow keys the cursor would be moved one line or space in that direction. I accomplished this by creating a switch statement that would convert user input into  a command of my choice.
+2) I am still struggling on integrating a vector to read in and read out an input file and output file, respectively. Furthermore, my unfamiliarity with Visual Studios is causing me issues being able to read a text input file in visual studios, an issue I haven't had with other IDE's.
+3) I would advise future students to strongly familiarize themselves with the use of vectors, because it would make implementing one for integrating the files much easier.
+4) After completing the first milestone minimum requirements, I was able to do some experimenting with more of pdcurses functions. I was able to mess around with the colors and box functions, which gave me some ideas for how I will approach future milestones.
+5) The most difficult part of this milestone thus far is figuring how to allow a user to access a input and output file. I still am very unfamilar with how to utilize command line to to read input parameters.
+6) I am still having some issues grasping the logic of how curses mode operates vs. just interacting with the editor, and how this ties into files. Understanding vectors will become much easier once I am able to fully use and integrate one within my program.
+7) A small overview or resource to access on how to interact with input commands within the command line I belive would go a long way with many students.
