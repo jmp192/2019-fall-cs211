@@ -1,17 +1,12 @@
 #define PDC_DLL_BUILD 1
-#include <cstdlib>
-#include <ctime>
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <iomanip>
-#include "curses.h"
-#include "curspriv.h"
-#include "panel.h"
-using namespace std;
+#include "MyHeader.h"
 
 int main(void)
 {
+
+	/*
+	WINDOWS
+	*/
 
 	WINDOW* main_window = nullptr;
 	int num_cols = 0;
@@ -24,19 +19,18 @@ int main(void)
 	SETUP
 	*/
 
-
-	//resize our window
-	//resize_term(5000, 5000);				   //work on the resize here
+	//RESIZE WINDOW
+	//resize_term(5000, 5000);
 	getmaxyx(main_window, num_rows, num_cols);
-	//resize_term(num_rows - 1, num_cols - 1); //work on resize here
+	resize_term(num_rows - 1, num_cols - 1);
 
-	//turn keyboard echo
+	//TURN KEYBOARD ECHO OFF
 	noecho();
 
-	//turn keypad on
+	//TURN KEYPAD ON
 	keypad(main_window, TRUE);
 
-	//hide cursor
+	//HIDE CURSOS
 	curs_set(TRUE);
 
 	//SET BORDER COLOR
@@ -124,21 +118,21 @@ int main(void)
 			break;
 		};
 
-		//for (int i = 0; i < num_cols; i++)
-		//{
-			//mvwprintw(main_window, 1, 1, "<Enter exit to exit>");
+		for (int i = 0; i < num_cols; i++)
+		{
+			mvwprintw(main_window, 1, 1, "<Enter exit to exit>");
 
-			//getch();
+			getch();
 
-			//if (inChar == 'a' && inChar != 'e')
-			//{
-				//mvaddch( i + 2, 2, 'a');
+			if (inChar == 'a' && inChar != 'e')
+			{
+				mvaddch( i + 2, 2, 'a');
 
-				//getch();
-			//}
-		//}
+				getch();
+			}
+		}
 
-	//getch();
+	getch();
 
 	//INPUT CODE HERE
 	//get user input
@@ -159,12 +153,15 @@ int main(void)
 	//wifstream fin;
 	ifstream fin;
 	fin.open("C:\Users\James Pelligra\2019-fall-cs211\projects\TextEditor\TextEditorProject1");
+	fin.open("myInFile.txt");
 
-	char   first[80];
-	fin >> first;
-	mvprintw(4, 4, first);
+	//use file here
+	
+	
+	char   tryOne[90];
+	fin >> tryOne;
+	mvprintw(4, 4, tryOne);
 	wrefresh(main_window);
-
 
 	//try a nested statement to USE FILE
 
